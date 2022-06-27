@@ -8,6 +8,7 @@ images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
 
+
 const imgContainer = document.querySelector('div.ms_carou-img-cont');
 const buttonNext = document.querySelector('.ms_btn-next');
 const buttonPrev = document.querySelector('.ms_btn-prev');
@@ -26,12 +27,30 @@ for ( let index = 0; index < images.length ; index++ ) {
         imgLandscape.classList.add('active');
 
     }  
-                
+     
+
     imgContainer.append(imgLandscape);      
            
 }
 
 const imageList = document.querySelectorAll('.ms_carou-img-cont img');
+const clock = setInterval(playImg, 3000, imageList);
+
+
+
+function playImg(imageToDisplay) {
+    imageToDisplay[activeElement].classList.remove('active');
+
+    activeElement++;
+
+    if (activeElement === imageToDisplay.length){
+        activeElement = 0;
+    }
+
+    imageToDisplay[activeElement].classList.add('active');
+}
+
+
 
 buttonNext.addEventListener('click', function() {
     imageList[activeElement].classList.remove('active');
@@ -45,6 +64,7 @@ buttonNext.addEventListener('click', function() {
     imageList[activeElement].classList.add('active');
 
 });
+
 
 buttonPrev.addEventListener('click', function() {
     imageList[activeElement].classList.remove('active');
