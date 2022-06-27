@@ -1,0 +1,13 @@
+div.ms_carou-img-cont img{
+    display: none;
+    height: 100%;
+}
+
+
+div.ms_carou-img-cont img.active{
+    display: block;
+}
+
+div.ms_carou-img-cont{
+    height: 450px;
+}
