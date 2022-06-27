@@ -53,28 +53,12 @@ function playImg(imageToDisplay) {
 
 
 buttonNext.addEventListener('click', function() {
-    imageList[activeElement].classList.remove('active');
-
-    activeElement++;
-
-    if (activeElement === imageList.length){
-        activeElement = 0;
-    }
-
-    imageList[activeElement].classList.add('active');
-
+    playImg(imageList);
+    
 });
 
 
 buttonPrev.addEventListener('click', function() {
-    imageList[activeElement].classList.remove('active');
-
-    activeElement--;
-
-    if (activeElement === -1){
-        activeElement = imageList.length -1;
-    }
-
-    imageList[activeElement].classList.add('active');
+    playImg(imageList);
 
 });
